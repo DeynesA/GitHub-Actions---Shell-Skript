@@ -1,17 +1,18 @@
 name: Shell.sh
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    workflow_dispatch:
+    push:
+        branches:
+        - master
+    pull_request:
+        branches:
+        - master
 
 jobs:
     Explore-Github-Actions:
         runs-on: ubuntu-latest
-        
+
         steps:
         - name: update & upgrade
           run: |
@@ -19,10 +20,8 @@ jobs:
             sudo apt-get update 
             sudo apt-get upgrade -y
        
-        - name: Clonen_repository
-          run: |
-                echo "Clone GitHub-Actions---Shell-Skript_respository"
-                git clone https://github.com/DeynesA/GitHub-Actions---Shell-Skript.git
+        - name: Checkout repository
+          uses: actions/checkout@v2  # Klont das Repository, um auf den Code und die Dateien zuzugreifen
 
         - name: Shell
           run: ./script.sh
