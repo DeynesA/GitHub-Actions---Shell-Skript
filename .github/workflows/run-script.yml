@@ -1,27 +1,27 @@
 name: Shell.sh
 
 on:
-    workflow_dispatch:
-    push:
-        branches:
-        - master
-    pull_request:
-        branches:
-        - master
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
-    Explore-Github-Actions:
-        runs-on: ubuntu-latest
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: update & upgrade
-          run: |
-            echo "update & upgrade"
-            sudo apt-get update 
-            sudo apt-get upgrade -y
-       
-        - name: Checkout repository
-          uses: actions/checkout@v2  # Klont das Repository, um auf den Code und die Dateien zuzugreifen
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Klont das Repository, um auf den Code und die Dateien zuzugreifen
 
-        - name: Shell
-          run: ./script.sh
+    - name: update & upgrade
+      run: |
+        echo "update & upgrade"
+        sudo apt-get update 
+        sudo apt-get upgrade -y
+
+    - name: Run script
+      run: bash ./script.sh  # Führt das Shell-Skript aus
