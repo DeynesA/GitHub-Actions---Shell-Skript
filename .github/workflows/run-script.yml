@@ -24,4 +24,7 @@ jobs:
         sudo apt-get upgrade -y
 
     - name: Run script
-      run: bash ./script.sh  # Führt das Shell-Skript aus
+      run: |
+            ls -la
+            chmod +x script.sh
+            ./script.sh  # Führt das Shell-Skript aus
