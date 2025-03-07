@@ -20,5 +20,7 @@ jobs:
     - name: Run script
       run: |
             ls -la
+            echo "setze rechte"
             chmod +x ./script.sh
+            echo "script Ausführung"
             ./script.sh  
