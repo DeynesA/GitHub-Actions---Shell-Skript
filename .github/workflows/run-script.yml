@@ -23,4 +23,5 @@ jobs:
             echo "setze rechte"
             chmod +x ./script.sh
             echo "script Ausführung"
+            ls -la
             ./script.sh  
